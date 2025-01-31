@@ -33,18 +33,18 @@ export default function AbacusAssignment() {
     renderQuestionInputForms();
   };
 
-  const addSequence = (questionIndex: number): void => {
-    const sequencesDiv = document.getElementById(`sequences-${questionIndex}`);
-    if (!sequencesDiv) return;
+  // const addSequence = (questionIndex: number): void => {
+  //   const sequencesDiv = document.getElementById(`sequences-${questionIndex}`);
+  //   if (!sequencesDiv) return;
   
-    const newIndex = sequencesDiv.children.length;
-    const newInput = document.createElement("input");
-    newInput.type = "text";
-    newInput.id = `operation-${questionIndex}-${newIndex}`;
-    newInput.placeholder = "Enter operation (e.g., *2, +5)";
-    newInput.className = "border rounded px-3 py-2 w-full mt-2";
-    sequencesDiv.appendChild(newInput);
-  };
+  //   const newIndex = sequencesDiv.children.length;
+  //   const newInput = document.createElement("input");
+  //   newInput.type = "text";
+  //   newInput.id = `operation-${questionIndex}-${newIndex}`;
+  //   newInput.placeholder = "Enter operation (e.g., *2, +5)";
+  //   newInput.className = "border rounded px-3 py-2 w-full mt-2";
+  //   sequencesDiv.appendChild(newInput);
+  // };
 
   const renderQuestionInputForms = () => {
     
@@ -67,47 +67,47 @@ export default function AbacusAssignment() {
     questionsInput.innerHTML += `<button onclick="saveQuestions()" class="bg-green-500 text-white px-4 py-2 rounded mt-4">Save Questions</button>`;
   };
 
-  const saveQuestions = () => {
+  // const saveQuestions = () => {
 
-    const newQuestions: string[][] = [];
-    for (let i = 0; i < numQuestions; i++) {
-      const sequencesDiv = document.getElementById(`sequences-${i}`);
-      if (!sequencesDiv) continue;
-      const sequenceInputs = sequencesDiv.querySelectorAll("input");
-      const sequences: string[] = [];
+  //   const newQuestions: string[][] = [];
+  //   for (let i = 0; i < numQuestions; i++) {
+  //     const sequencesDiv = document.getElementById(`sequences-${i}`);
+  //     if (!sequencesDiv) continue;
+  //     const sequenceInputs = sequencesDiv.querySelectorAll("input");
+  //     const sequences: string[] = [];
 
-      for (const input of sequenceInputs) {
-        const value = (input as HTMLInputElement).value.trim();
+  //     for (const input of sequenceInputs) {
+  //       const value = (input as HTMLInputElement).value.trim();
 
-        if (value.match(/^\d+(\.\d+)?$/)) {
-          sequences.push(`+${value}`);
-        } else if (value.match(/^[+\-*/]\d+(\.\d+)?$/)) {
-          sequences.push(value);
-        } else {
-          alert(`Invalid input for Question ${String.fromCharCode(65 + i)}. Ensure proper format.`);
-          return;
-        }
-      }
+  //       if (value.match(/^\d+(\.\d+)?$/)) {
+  //         sequences.push(`+${value}`);
+  //       } else if (value.match(/^[+\-*/]\d+(\.\d+)?$/)) {
+  //         sequences.push(value);
+  //       } else {
+  //         alert(`Invalid input for Question ${String.fromCharCode(65 + i)}. Ensure proper format.`);
+  //         return;
+  //       }
+  //     }
 
-      if (sequences.length === 0) {
-        alert(`Please enter at least one sequence for Question ${String.fromCharCode(65 + i)}.`);
-        return;
-      }
+  //     if (sequences.length === 0) {
+  //       alert(`Please enter at least one sequence for Question ${String.fromCharCode(65 + i)}.`);
+  //       return;
+  //     }
 
-      newQuestions.push(sequences);
-    }
-    setQuestions(newQuestions);
-    const startButton = document.getElementById("start-btn");
-    if (startButton) startButton.style.display = "block";
-  };
+  //     newQuestions.push(sequences);
+  //   }
+  //   setQuestions(newQuestions);
+  //   const startButton = document.getElementById("start-btn");
+  //   if (startButton) startButton.style.display = "block";
+  // };
 
-  const startAssignment = () => {
-    const setupDiv = document.getElementById("setup");
-    const assignmentDiv = document.getElementById("assignment");
-    if (setupDiv) setupDiv.style.display = "none";
-    if (assignmentDiv) assignmentDiv.style.display = "block";
-    showQuestion(0);
-  };
+  // const startAssignment = () => {
+  //   const setupDiv = document.getElementById("setup");
+  //   const assignmentDiv = document.getElementById("assignment");
+  //   if (setupDiv) setupDiv.style.display = "none";
+  //   if (assignmentDiv) assignmentDiv.style.display = "block";
+  //   showQuestion(0);
+  // };
 
   const showQuestion = (index: number) => {
     if (index < 0 || index >= questions.length) return;

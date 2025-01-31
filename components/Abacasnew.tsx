@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+//import { useRouter } from "next/navigation";
 
 const Abacusnew = () => {
   const [numQuestions, setNumQuestions] = useState<number | null>(null);
@@ -13,7 +13,7 @@ const Abacusnew = () => {
   const [currentSequenceIndex, setCurrentSequenceIndex] = useState(0);
   const [showAnswer, setShowAnswer] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
-  const router = useRouter();
+  //const router = useRouter();
 
   const handleSetNumQuestions = (value: string) => {
     const num = parseInt(value, 10);

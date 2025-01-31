@@ -112,6 +112,7 @@ const SequencePage = () => {
         setCalculatedAnswer('Invalid Expression');
       }
     } catch (error) {
+      console.error(error)
       setCalculatedAnswer('Invalid Expression');
     }
   };
