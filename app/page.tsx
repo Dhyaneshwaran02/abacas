@@ -1,19 +1,12 @@
-import Abacus from "@/components/Abacas";
-import Abacas2 from "@/components/Abacas2";
-import Abacusnew from "@/components/Abacasnew";
-import AbacusAssignment from "@/components/AbacusAssignment";
-// import Portfolio from "@/components/portfoilo";
-import Image from "next/image";
+import Abacusnew from '@/components/Abacasnew';
+import React from 'react';
 
-
-export default function Home() {
+const page = () => {
   return (
-    <div >
-      {/* <AbacusAssignment /> */}
-      {/* <Abacus /> */}
-      {/* <Abacusnew /> */}
-       <Abacas2 />
-       {/* <Portfolio /> */}
+    <div>
+        <Abacusnew />
     </div>
-  );
+  )
 }
+
+export default page;
