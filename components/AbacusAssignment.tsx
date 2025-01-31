@@ -1,10 +1,10 @@
 'use client';
 import { useState } from "react";
 
-export default function AbacusAssignment() {
+const AbacusAssignment = () => {
   const [numQuestions, setNumQuestions] = useState<number>(0);
   const [timeInterval, setTimeInterval] = useState<number>(0);
-  const [questions, setQuestions] = useState<string[][]>([]);
+  //const [questions, setQuestions] = useState<string[][]>([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
   const [currentSequenceIndex, setCurrentSequenceIndex] = useState<number>(0);
 
@@ -109,12 +109,12 @@ export default function AbacusAssignment() {
   //   showQuestion(0);
   // };
 
-  const showQuestion = (index: number) => {
-    if (index < 0 || index >= questions.length) return;
-    setCurrentQuestionIndex(index);
-    setCurrentSequenceIndex(0);
-    displaySequence(questions[index], String.fromCharCode(65 + index));
-  };
+  // const showQuestion = (index: number) => {
+  //   if (index < 0 || index >= questions.length) return;
+  //   setCurrentQuestionIndex(index);
+  //   setCurrentSequenceIndex(0);
+  //   displaySequence(questions[index], String.fromCharCode(65 + index));
+  // };
 
   const displaySequence = (sequences: string[], questionLetter: string) => {
     const questionBox = document.getElementById("question-box");
@@ -189,6 +189,8 @@ export default function AbacusAssignment() {
     </div>
   );
 }
+
+export default AbacusAssignment;
 
 // Number of Questions Input Component
 const NumberOfQuestionsInput = ({ handleSetNumQuestions }: { handleSetNumQuestions: () => void }) => (

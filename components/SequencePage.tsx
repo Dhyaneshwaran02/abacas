@@ -103,16 +103,16 @@ const SequencePage = () => {
       const sanitizedExpression = question
         .replace(/÷/g, '/')
         .replace(/[^\d+\-*/().]/g, ''); // Remove invalid characters
-
+  
       const answer = eval(sanitizedExpression);
-
+  
       if (!isNaN(answer)) {
         setCalculatedAnswer(answer.toString());
       } else {
         setCalculatedAnswer('Invalid Expression');
       }
     } catch (error) {
-      console.error(error)
+      console.error(error); // Use the error variable
       setCalculatedAnswer('Invalid Expression');
     }
   };
